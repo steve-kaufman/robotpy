@@ -7,4 +7,4 @@ class Drive(Command):
         y = self.robot.oi.stick.getY()
         x = self.robot.oi.stick.getX()
 
-        driver.drive(y, x)
+        driver.drive_robot(y, x)
