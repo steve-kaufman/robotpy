@@ -3,11 +3,11 @@ import wpilib.drive
 import robotmap
 from commands.drive import Drive
 
-def _square_input(num):
+def _process_input(num):
     if(num == 0):
         return 0
     sign = num / abs(num)
-    return num * num * sign
+    return num * num * sign * 0.65
 
 class Driver:
     def __init__(self, robot):
@@ -19,6 +19,6 @@ class Driver:
             self.right_motor
         )
     def drive_robot(self, y, x):
-        y = _square_input(y)
-        x = _square_input(x)
+        y = _process_input(y)
+        x = _process_input(x)
         self.drive.arcadeDrive(-y, x)
